@@ -1,15 +1,11 @@
-
 import './App.css';
-import FunctionButton from './components/FunctionButton';
-import FunctionWrapper from './components/FunctionWrapper';
-
+import Name from './components/Name';
+import Text from "./components/Text";
 function App() {
   return (
-    <div className="App">
-     <FunctionWrapper>
-      {(count, handler) => <FunctionButton count={count} handler={handler}/>}
-     </FunctionWrapper>
-    </div>
+  <Text>
+    {({addGreeting}) => <Name addGreeting={addGreeting}/>}
+  </Text>
   );
 }
 
