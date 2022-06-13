@@ -11,8 +11,7 @@ function App() {
      <FunctionWrapper>
       {(count, handler) => <FunctionButton count={count} handler={handler}/>}
      </FunctionWrapper>
-     <HoverWrapper>
-      {(count, increment) => <HoverCounter count={count} increment={increment}/>}
+     <HoverWrapper render={(count, increment) => <HoverCounter count={count} increment={increment}/>}>
      </HoverWrapper>
     </div>
   );
