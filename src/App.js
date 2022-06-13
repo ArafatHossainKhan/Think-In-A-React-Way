@@ -1,11 +1,13 @@
 import './App.css';
-import Name from './components/Name';
-import Text from "./components/Text";
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
 function App() {
   return (
-  <Text>
-    {({addGreeting}) => <Name addGreeting={addGreeting}/>}
-  </Text>
+    <div>
+ <ClickCounter/>
+    <HoverCounter/>
+    </div>
+   
   );
 }
 
