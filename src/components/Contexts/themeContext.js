@@ -1,4 +1,5 @@
-import React from "react"
-const themecontext = React.createContext()
+import React from "react";
 
-export default themecontext
+const ThemeContext = React.createContext();
+
+export default ThemeContext

@@ -1,24 +1,23 @@
 
 import { useState } from 'react';
 import './App.css';
+import Section from './components/Contexts/Section';
+import ThemeContext from './components/Contexts/ThemeContext';
 
-import Themecontext from './components/Contexts/themeContext';
-import HoverCounter from './components/HoverCounter';
-import HoverWrapper from './components/HoverWrapper';
-import Section from './components/Section';
 
 function App() {
-  const [theme, setTheme] = useState("red")
+  const [theme, setTheme] = useState('red')
+  const switchTheme = () => {
+    if(theme === "red") return setTheme("dark")
+    else return setTheme("red")
+  }
+ 
   return (
     <div className="App">
-      <Themecontext.Provider value={{theme: theme, setTheme: setTheme}}>
-        <Section />
-      </Themecontext.Provider>
-
-      
-    
-     <HoverWrapper render={(count, increment) => <HoverCounter count={count} increment={increment}/>}>
-     </HoverWrapper>
+      <ThemeContext.Provider value={{theme, setTheme, switchTheme}}>
+      <Section/>
+      </ThemeContext.Provider>
+     
     </div>
   );
 }
