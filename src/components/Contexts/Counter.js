@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { ClickCounter } from "./ClickCounter";
-import ThemeContext from "./ThemeContext";
+import CountContext from "./CountContext";
+
 
 const Counter = () => {
     const [count, setCount] = useState(0);
     const incrementCount = () => {
         setCount((prev) => prev + 1)
     }
+const providerValue = {
+    count,
+    incrementCount
+}
   return (
-    <ThemeContext.Consumer>
-        {({theme, switchTheme}) => <ClickCounter switchTheme={switchTheme} theme={theme} count={count} incrementCount={incrementCount}/>}
-    </ThemeContext.Consumer>
+    <CountContext.Provider value={providerValue}>
+        <ClickCounter/>
+    </CountContext.Provider>
     
   )
 }
